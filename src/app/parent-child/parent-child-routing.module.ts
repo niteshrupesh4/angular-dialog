@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ParentChildComponent } from './parent-child.component';
 import { ParentComponent } from './parent/parent.component';
-// import { ParentDialogComponent } from './parent-dialog/parent-dialog.component';
+import { ParentDialogComponent } from './parent-dialog/parent-dialog.component';
 
 
 const routes: Routes = [
@@ -13,10 +13,10 @@ const routes: Routes = [
         path: '',
         component: ParentComponent
       },
-      // {
-      //   path: 'dialog',
-      //   component: ParentDialogComponent
-      // }
+      {
+        path: 'dialog',
+        component: ParentDialogComponent
+      }
     ]
   }
 ];
