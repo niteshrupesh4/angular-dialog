@@ -1,4 +1,5 @@
 import { NgModule } from "@angular/core";
+import { FlexLayoutModule } from '@angular/flex-layout';
 import {
   MatButtonModule,
   MatStepperModule,
@@ -12,7 +13,12 @@ import {
   MatSortModule,
   MatPaginatorModule,
   MatDialogModule,
-  MatTabsModule 
+  MatTabsModule,
+  MatToolbarModule,
+  MatIconModule,
+  MatMenuModule,
+  MatSidenavModule,
+  MatListModule
 } from "@angular/material";
 
 const MaterialComponents = [
@@ -28,7 +34,13 @@ const MaterialComponents = [
   MatSortModule,
   MatPaginatorModule,
   MatDialogModule,
-  MatTabsModule 
+  MatTabsModule,
+  MatToolbarModule,
+  MatIconModule,
+  FlexLayoutModule,
+  MatMenuModule,
+  MatSidenavModule,
+  MatListModule
 ];
 
 @NgModule({
