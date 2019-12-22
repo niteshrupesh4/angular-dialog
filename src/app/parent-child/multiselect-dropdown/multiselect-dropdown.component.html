@@ -16,3 +16,40 @@
        <i class="material-icons">save</i>
   </button>
 </form>
+<h2>HTML Table</h2>
+<table>
+	<tr>
+		<th>Company</th>
+		<th>Contact</th>
+		<th>Country</th>
+		<th>Action</th>
+	</tr>
+	<tr *ngFor="let item of tableArray">
+		<td>{{item.company}}</td>
+		<td>{{item.contect}}</td>
+		<td>{{item.country}}</td>
+		<td>
+			<button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+  <mat-icon>more_vert</mat-icon>
+  </button>
+			<mat-menu #menu="matMenu" color="accent">
+				<button (click)="onView(item.id)" mat-menu-item color="primary">
+    <mat-icon>remove_red_eye</mat-icon>
+    <span>View Details</span>
+  </button>
+				<button (click)="onEdit(item.id)" mat-menu-item color="primary">
+    <mat-icon>edit</mat-icon>
+    <span>Edit</span>
+  </button>
+				<button (click)="onSetting(item.id)" mat-menu-item color="accent">
+    <mat-icon>settings_applications</mat-icon>
+    <span>List client</span>
+  </button>
+				<button (click)="onBlock(item.id)" mat-menu-item color="warn">
+    <mat-icon>block</mat-icon>
+    <span>Block</span>
+  </button>
+			</mat-menu>
+		</td>
+	</tr>
+</table>
