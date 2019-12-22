@@ -4,15 +4,16 @@
 			<button mat-icon-button>
         <mat-icon>menu</mat-icon>
       </button>
-		
-				<button mat-icon-button [routerLink]="['/']">
+
+			<button title="Home" mat-icon-button [routerLink]="['/']">
         <mat-icon>home</mat-icon>
       </button>
-      	<button mat-icon-button [routerLink]="['/dialog']">
-       <i class="material-icons">
-tab_unselected
-</i>
+			<button title="Dialog grid list" mat-icon-button [routerLink]="['/dialog']">
+       <i class="material-icons">tab_unselected</i>
         </button>
+			<button title="MultiSelect Dropdown" mat-icon-button [routerLink]="['/dropdown']">
+       <i class="material-icons">select_all</i>
+      </button>
 		</div>
 		<span class="example-spacer">Text in the middle</span>
 		<span>User name</span>

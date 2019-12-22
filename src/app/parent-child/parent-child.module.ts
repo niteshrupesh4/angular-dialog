@@ -9,7 +9,9 @@ import { Child1Component } from "./child1/child1.component";
 import { Child2Component } from "./child2/child2.component";
 import { ParentDialogComponent } from "./parent-dialog/parent-dialog.component";
 import { ChildDialogComponent } from "./child-dialog/child-dialog.component";
-import { ReactiveFormsModule } from "@angular/forms";
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
+import { MultiselectDropdownComponent } from "./multiselect-dropdown/multiselect-dropdown.component";
+import { NgMultiSelectDropDownModule } from "ng-multiselect-dropdown";
 
 @NgModule({
   declarations: [
@@ -18,13 +20,16 @@ import { ReactiveFormsModule } from "@angular/forms";
     Child1Component,
     Child2Component,
     ParentDialogComponent,
-    ChildDialogComponent
+    ChildDialogComponent,
+    MultiselectDropdownComponent
   ],
   imports: [
     CommonModule,
     ParentChildRoutingModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgMultiSelectDropDownModule.forRoot(),
+    FormsModule
   ],
   entryComponents: [Child1Component, Child2Component, ChildDialogComponent]
 })
