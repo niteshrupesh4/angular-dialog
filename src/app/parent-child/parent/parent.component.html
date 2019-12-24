@@ -1,52 +1,73 @@
-
 <div class="box-header with-border">
 
 	<mat-tab-group>
 		<mat-tab label="Dynamic form">
-		<div class="form-group voffset row">
-		<label for="" class="vertical-label col-sm-4 col-md-8 text-right">
+			<div class="form-group voffset row">
+				<label for="" class="vertical-label col-sm-4 col-md-8 text-right">
       Update Form</label>
-		<div class="col-sm-8 col-md-4">
-			<select (change)="selectName($event.target.value)">
+				<div class="col-sm-8 col-md-4">
+					<select (change)="selectName($event.target.value)">
         <option value="0">--Select--</option>
         <option [value]="obj.Id" *ngFor="let obj of data">
           {{ obj.Name }}
         </option>
       </select>
-		</div>
-	</div>
-	
-	<div class="form-group voffset row">
-		<template #loadComponent> </template>
-	</div>
+				</div>
+			</div>
+
+			<div class="form-group voffset row">
+				<template #loadComponent> </template>
+			</div>
 		</mat-tab>
 		<mat-tab label="Cards">
-      <button mat-flat-button  (click)="onClick()">Action Clic</button>
-			
-      <mat-card class="example-card">
-  <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>Shiba Inu</mat-card-title>
-    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-  </mat-card-header>
-  <mat-spinner *ngIf="isAction"></mat-spinner>
-  <img *ngIf="!isAction" mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-  <mat-card-content>
-    <p>
-      The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-      A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-      bred for hunting.
-    </p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
-  </mat-card-actions>
-</mat-card>
+			<button mat-flat-button  (click)="onClick()">Action Clic</button>
+
+			<mat-card class="example-card">
+				<mat-card-header>
+					<div mat-card-avatar class="example-header-image"></div>
+					<mat-card-title>Shiba Inu</mat-card-title>
+					<mat-card-subtitle>Dog Breed</mat-card-subtitle>
+				</mat-card-header>
+				<mat-spinner *ngIf="isAction"></mat-spinner>
+				<img *ngIf="!isAction" mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+				<mat-card-content>
+					<p>
+						The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+						A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+						bred for hunting.
+					</p>
+				</mat-card-content>
+				<mat-card-actions>
+					<button mat-button>LIKE</button>
+					<button mat-button>SHARE</button>
+				</mat-card-actions>
+			</mat-card>
 		</mat-tab>
-		<mat-tab label="Third">
-			<button mat-flat-button  [routerLink]="['/dialog']">dialoag</button>
+		<mat-tab label="Stripe">
+			<div class="container mt-5">
+				<h2>Stripe Checkout</h2>
+				<div class="example-button-row">
+					<button (click)="pay(20)"  mat-raised-button color="primary">Pay $20</button>
+					<button (click)="pay(30)"  mat-raised-button color="primary">Pay $30</button>
+					<button (click)="pay(50)"  mat-raised-button color="primary">Pay $50</button>
+				</div>
+				<div class="row mt-5">
+					<div class="col-md-4">
+
+					</div>
+					<div class="col-md-4">
+
+					</div>
+					<div class="col-md-4">
+
+					</div>
+				</div>
+				<p class="mt-5">
+					Try it out using the test card number <b>4242 4242 4242 4242</b>, a random three-digit CVC number,
+					any expiration date in the future, and a random five-digit U.S. ZIP code.
+				</p>
+			</div>
 		</mat-tab>
 	</mat-tab-group>
-	
+
 </div>
