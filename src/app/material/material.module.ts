@@ -19,7 +19,9 @@ import {
   MatIconModule,
   MatMenuModule,
   MatSidenavModule,
-  MatListModule
+  MatListModule,
+  MatCardModule,
+  MatProgressSpinnerModule
 } from "@angular/material";
 
 const MaterialComponents = [
@@ -41,7 +43,9 @@ const MaterialComponents = [
   FlexLayoutModule,
   MatMenuModule,
   MatSidenavModule,
-  MatListModule
+  MatListModule,
+  MatCardModule,
+  MatProgressSpinnerModule
 ];
 
 @NgModule({

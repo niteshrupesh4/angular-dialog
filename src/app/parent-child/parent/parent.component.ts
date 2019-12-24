@@ -10,6 +10,7 @@ import { Child2Component } from '../child2/child2.component';
 export class ParentComponent implements OnInit {
 componentRef: any;
   @ViewChild('loadComponent', { read: ViewContainerRef, static: false }) entry: ViewContainerRef;
+  isAction: boolean = true;
   constructor(private resolver: ComponentFactoryResolver) { }
   
    data = [
@@ -45,6 +46,10 @@ componentRef: any;
   }
 
   ngOnInit() {
+  }
+
+  onClick(){
+    this.isAction = false;
   }
 
 }
