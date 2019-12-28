@@ -5,7 +5,7 @@ import { ParentComponent } from './parent/parent.component';
 import { ParentDialogComponent } from './parent-dialog/parent-dialog.component';
 import { MultiselectDropdownComponent } from 
 './multiselect-dropdown/multiselect-dropdown.component';
-
+import { PaymentComponent } from './payment/payment.component';
 
 const routes: Routes = [
   {
@@ -22,6 +22,10 @@ const routes: Routes = [
       {
         path: 'dropdown',
         component: MultiselectDropdownComponent
+      },
+      {
+        path: 'payment',
+        component: PaymentComponent
       }
     ]
   }

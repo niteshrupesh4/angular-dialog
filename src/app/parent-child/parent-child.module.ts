@@ -12,6 +12,7 @@ import { ChildDialogComponent } from "./child-dialog/child-dialog.component";
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { MultiselectDropdownComponent } from "./multiselect-dropdown/multiselect-dropdown.component";
 import { NgMultiSelectDropDownModule } from "ng-multiselect-dropdown";
+import { PaymentComponent } from './payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { NgMultiSelectDropDownModule } from "ng-multiselect-dropdown";
     Child2Component,
     ParentDialogComponent,
     ChildDialogComponent,
-    MultiselectDropdownComponent
+    MultiselectDropdownComponent,
+    PaymentComponent
   ],
   imports: [
     CommonModule,
