@@ -7,38 +7,25 @@ import { HttpClient } from "@angular/common/http";
   styleUrls: ["./payment.component.css"]
 })
 export class PaymentComponent implements OnInit {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    this.http
+      .get("http://localhost:3000/paywithpaytm?amount=50")
+      .subscribe((res: any) => {
+        this.paytm = res.result;
+        // than i will create form
+        this.createPaytmForm();
+      });
+  }
 
   // I have all below fields values
-  paytm = {
-    MID: "xxxxx", // paytm provide
-    WEBSITE: "WEBSTAGING", // paytm provide
-    INDUSTRY_TYPE_ID: "Retail", // paytm provide
-    CHANNEL_ID: "WEB", // paytm provide
-    ORDER_ID: "xxxxx", // unique id
-    CUST_ID: "xxxxx", // customer id
-    MOBILE_NO: "xxxx", // customer mobile number
-    EMAIL: "xxxx", // customer email
-    TXN_AMOUNT: "10.00", // transaction amount
-    CALLBACK_URL: "http://localhost:8080/paymentverity" // Call back URL that i want to redirect after payment fail or success
-  };
+  paytm = [];
 
-  submitForm() {
-    // I will do API call and will get CHECKSUMHASH.
-    this.http.get("http://localhost:8080/payment").subscribe((res: any) => {
-      debugger;
-      // As per my backend i will get checksumhash under res.data
-      this.paytm["CHECKSUMHASH"] = res.data;
-      // than i will create form
-      //  this.createPaytmForm();
-    });
-  }
 
   createPaytmForm() {
     const my_form: any = document.createElement("form");
     my_form.name = "paytm_form";
     my_form.method = "post";
-    my_form.action = "https://securegw-stage.paytm.in/order/process";
+    my_form.action = "https://securegw-stage.paytm.in/theia/processTransaction";
 
     const myParams = Object.keys(this.paytm);
     for (let i = 0; i < myParams.length; i++) {
